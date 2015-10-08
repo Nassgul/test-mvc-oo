@@ -26,6 +26,6 @@ if(isset($_SESSION['idsession'])){
 }
 
 // sinon (on est un simple visiteur du site)
- else {
+if(!isset($_GET['connect'])&&!isset($_GET['deconnect'])) {
     require 'controller/UserController.php';
 }

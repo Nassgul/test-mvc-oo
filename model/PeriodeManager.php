@@ -23,10 +23,10 @@ protected $db;
     
     // on récupère toutes les periodes
     public function recupTousPeriode(){
-        $query = $this->db->query("SELECT * FROM periode ORDER BY id DESC;");
+        $query = $this->db->query("SELECT * FROM periode ORDER BY id ASC;");
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-    public function recupUnPeriode($idart){
+    public function recupUnPeriode(Periode $idart){
          $idart= (int)$idart;
         $query = $this->db->query("SELECT * FROM periode WHERE id=$idart;");
         return $query->fetch(PDO::FETCH_OBJ);
