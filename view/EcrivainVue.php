@@ -49,17 +49,14 @@ and open the template in the editor.
         </nav>
         <hr/>
             <h5><?= $bioz?></h5>
-        <h3><?= $titre[0];?></h3>
-        <p><?= substr($resume[0],0,100);?>...<a href='?idlivre=<?= $idlivre[0];?>'>lire plus</a></p>
+        <h3><?php 
+            $nb=count($idlivre);
+        for ($i=0;$i<$nb;$i++) {?>
+         <h3><?= $titre[$i] ?></h3>
+        <p><?= substr($resume[$i],0,100);?>... <a href='?idlivre=<?= $idlivre[$i] ?>'>lire plus</a></p>
             <hr>
-            <h3><?= $titre[1];?></h3>
-        <p><?= substr($resume[1],0,100);?>...<a href='?idlivre=<?= $idlivre[0];?>'>lire plus</a></p>
-            <hr>
-            
-        
-        
-        
-        <?php }
+      
+        <?php }}
         ?>
     </body>
 </html>

@@ -40,14 +40,6 @@ class EcrivainManager {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function detailEcrivain($idart) {
-        $this->db->exec("SET SESSION group_concat_max_len=10000000");
-        $idart = (int) $idart;
-        $query = $this->db->query("SELECT e.id,e.lenom,e.labio, group_concat(l.letitre separator '||') titres, group_concat(l.id separator '||') zeuid,
-                                    group_concat(l.lasortie separator '||') parution,
-                                    group_concat(l.ladescription separator '||') résumé FROM ecrivain e 
-                                    inner join livre l on e.id = l.ecrivain_id where e.id=$idart group by e.id;");
-        return $query->fetchAll(PDO::FETCH_OBJ);
-    }
+    
 
 }

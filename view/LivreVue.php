@@ -43,7 +43,7 @@ and open the template in the editor.
         </nav>
         <hr>
         <h2>Titre : <?= $titre ?> | Date de sortie : <?= $sortie ?></h2>
-        <h3><?= $description ?></h3>
+        <p><?= $description ?></p>
         <hr>
         <?php } ?>
     </body>

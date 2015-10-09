@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Bienvenue sur Les Poètes Francophones</title>
+    
     </head>
     <body>
 
@@ -24,6 +25,8 @@
                 </li>
                 <?php if (isset($_SESSION['idsession'])) {
                     ?>
+                <li><a href="?ajout">Ajouter</a></li>
+                <li><a href="?modif">Modifier</a></li>
                     <li><a href="?deconnect">Se déconnecter</a></li>
                 <?php } else { ?>
                     <li><a href="?connect">Se connecter</a></li><?php } ?>

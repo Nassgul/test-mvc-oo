@@ -9,17 +9,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
-        <?php
-     
-        foreach ($ere as $value) {
+    <body> <?php foreach ($ere as $value) {
             $auteurs = $value->Écrivains;
             $ecrivain = explode("||", $auteurs);
             $bios = $value->Bios;
             $bio = explode("||", nl2br($bios));
             $z =$value->idauteur;
-            $idecrivain = explode("||", $z);
-            ?>
+            $idecrivain = explode("||", $z);?>
         <h1>Les Poètes Francophones : Section - <?= $value->laperiode ;?>ème siècle</h1>
         <nav>
 
@@ -43,16 +39,16 @@ and open the template in the editor.
                     <li><a href="?connect">Se connecter</a></li><?php } ?>
             </ul>
         </nav>
-        <hr>
-        <h3><?= $ecrivain[0];?></h3>
-        <p><?= substr($bio[0],0,250);?>...<a href='?idecrivain=<?= $idecrivain[0];?>'>lire plus</a></p>
+        <hr> 
+
+        <?php 
+        $nb=count($idecrivain);
+        for ($i=0;$i<$nb;$i++) {?>
+         <h3><?= $ecrivain[$i] ?></h3>
+        <p><?= substr($bio[$i],0,250);?>... <a href='?idecrivain=<?= $idecrivain[$i] ?>'>lire plus</a></p>
             <hr>
-            <h3><?= $ecrivain[1];?></h3>
-            <p><?= substr($bio[1],0,250);?>...<a href='?idecrivain=<?= $idecrivain[1];?>'>lire plus</a></p>
-        <hr>
+              
         
-        
-        <?php }
-        ?>
+        <?php }} ?>
     </body>
 </html>
