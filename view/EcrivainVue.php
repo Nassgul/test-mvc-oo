@@ -47,8 +47,8 @@ and open the template in the editor.
                     <li><a href="?connect">Se connecter</a></li><?php } ?>
             </ul>
         </nav>
-        
-        <h5><?= $bioz?></h5>
+        <hr/>
+            <h5><?= $bioz?></h5>
         <h3><?= $titre[0];?></h3>
         <p><?= substr($resume[0],0,100);?>...<a href='?idlivre=<?= $idlivre[0];?>'>lire plus</a></p>
             <hr>

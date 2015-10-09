@@ -20,13 +20,26 @@ $auteur = new EcrivainManager(DB_SELECT, DB_USER, DB_PWD, true);
 $hasardecrivain = $auteur->hasardEcrivain();
 $epoque = new PeriodeManager(DB_SELECT, DB_USER, DB_PWD, true);
 $recup_menu = $menu->recupTousPeriode();
+$bouquin= new LivreManager(DB_SELECT, DB_USER, DB_PWD, true);
+if (isset($_GET['idperiode'])){
+   
+$periode=$_GET['idperiode'];
 
-if (isset($_GET['idperiode'])) {
+$ere = $epoque->recupUnPeriode($periode);
 
-    $periode = $_GET['idperiode'];
-
-    $ere = $epoque->recupUnPeriode($periode);
-  require_once 'view/PeriodeVue.php';
+require_once 'view/PeriodeVue.php';
+}
+if (isset($_GET['idecrivain'])){
+    $numauteur= $_GET['idecrivain'];
+    $recupauteur = $auteur->detailEcrivain($numauteur);
+    require_once 'view/EcrivainVue.php';
+    
+}
+if (isset($_GET['idlivre'])){
+    $id = $_GET['idlivre'];
+ $livre =$bouquin->recupUnLivre($id);
+ 
+    require_once 'view/LivreVue.php';
 }
 if (empty($_GET) && empty($_POST) && !empty($_SESSION['idsession'])) {
 

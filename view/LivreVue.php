@@ -11,16 +11,14 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-     
-        foreach ($ere as $value) {
-            $auteurs = $value->Écrivains;
-            $ecrivain = explode("||", $auteurs);
-            $bios = $value->Bios;
-            $bio = explode("||", nl2br($bios));
-            $z =$value->idauteur;
-            $idecrivain = explode("||", $z);
+      
+        foreach ($livre as $value) {
+            $desc = $value->ladescription;
+            $description = nl2br($desc);
+            $titre = $value->letitre;
+            $sortie = $value->lasortie;
             ?>
-        <h1>Les Poètes Francophones : Section - <?= $value->laperiode ;?>ème siècle</h1>
+        <h1>Les Poètes Francophones : Section Livre - <?= $value->letitre;?></h1>
         <nav>
 
             <ul>
@@ -44,15 +42,9 @@ and open the template in the editor.
             </ul>
         </nav>
         <hr>
-        <h3><?= $ecrivain[0];?></h3>
-        <p><?= substr($bio[0],0,250);?>...<a href='?idecrivain=<?= $idecrivain[0];?>'>lire plus</a></p>
-            <hr>
-            <h3><?= $ecrivain[1];?></h3>
-            <p><?= substr($bio[1],0,250);?>...<a href='?idecrivain=<?= $idecrivain[1];?>'>lire plus</a></p>
+        <h2>Titre : <?= $titre ?> | Date de sortie : <?= $sortie ?></h2>
+        <h3><?= $description ?></h3>
         <hr>
-        
-        
-        <?php }
-        ?>
+        <?php } ?>
     </body>
 </html>

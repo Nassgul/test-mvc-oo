@@ -13,12 +13,10 @@
  */
 class LivreManager {
  protected $db;
-    
 
-
-    public function __construct($dsn,$util,$pass,$erreur=false){
+    public function __construct($dsn, $util, $pass, $erreur = false) {
         // on se connecte en utilisant la méthode statique de ma MaPDO
-        $this->db = MaPDO::getConnection($dsn,$util,$pass,$erreur);
+        $this->db = MaPDO::getConnection($dsn, $util, $pass, $erreur);
     }
     
     // on récupère toutes les livres
@@ -27,9 +25,9 @@ class LivreManager {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
     public function recupUnLivre($idart){
-         $this= (int)$idart;
+         $idart= (int)$idart;
         $query = $this->db->query("SELECT * FROM livre WHERE id=$idart;");
-        return $query->fetch(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
     
 }
