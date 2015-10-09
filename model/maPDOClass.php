@@ -23,4 +23,4 @@ class MaPDO extends PDO {
         return self::$connection;
     }
 
-}
+}?>

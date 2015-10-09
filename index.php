@@ -21,11 +21,11 @@ if(isset($_GET['connect'])||isset($_GET['deconnect'])){
 }
 
 // si on est connecté comme admin
-if(isset($_SESSION['idsession'])){
+if(!empty($_SESSION['idsession'])){
     require 'controller/AdminController.php';
 }
 
 // sinon (on est un simple visiteur du site)
-if(!isset($_GET['connect'])&&!isset($_GET['deconnect'])) {
+if(!isset($_GET['connect'])&&!isset($_GET['deconnect'])&&empty($_SESSION['idsession'])) {
     require 'controller/UserController.php';
 }

@@ -6,8 +6,9 @@
     </head>
     <body>
 
-        <h1>Bienvenue sur Les Poètes Francophones</h1>       
+        <h1>Bienvenue sur Les Poètes Francophones</h1>
         <nav>
+
             <ul>
                 <li><a href="./">Accueil</a></li>
                 <li><a href="">Période</a>
@@ -16,7 +17,7 @@
                         if ($recup_menu) {
                             foreach ($recup_menu as $key => $value) {
 
-                                echo "<li ><a href='?idperiode=" . $value->id . "'>" . $value->laperiode . "ème siècle</li>";
+                                echo "<li ><a href='?idperiode=" . $value->id . "'>" . $value->laperiode . "</li>";
                             }
                         }
                         ?></ul>
@@ -39,7 +40,6 @@
                         <h2>Écrivain au hasard</h2>                         
                         <h3><?php echo $valeur->lenom ?></h3>
                         <p><?php echo nl2br($valeur->labio) ?></p>
-
                     </div>
                     <?php
                 }
@@ -48,5 +48,6 @@
 
 
         </div>
+
     </body>
 </html>

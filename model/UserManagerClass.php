@@ -14,6 +14,10 @@ class UserManagerClass {
         $this->db = MaPDO::getConnection($dsn,$util,$pass,$erreur);
     }
     
+    public function recupUser(){
+        $query = $this->db->query("SELECT * FROM util");
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
     public function verifUser($login,$pass) {
         $query = $this->db->prepare("SELECT * FROM util WHERE lelogin=? AND lepass=?;");
         $query->bindValue(1,$login,PDO::PARAM_STR);

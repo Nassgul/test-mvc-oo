@@ -27,9 +27,10 @@ class LivreManager {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
     public function recupUnLivre($idart){
-         $idart= (int)$idart;
+         $this= (int)$idart;
         $query = $this->db->query("SELECT * FROM livre WHERE id=$idart;");
         return $query->fetch(PDO::FETCH_OBJ);
     }
     
 }
+?>

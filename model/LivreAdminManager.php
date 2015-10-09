@@ -11,6 +11,6 @@
  *
  * @author Stagiaire
  */
-class LivreAdminManager {
+class LivreAdminManager extends LivreManager{
     //put your code here
 }
