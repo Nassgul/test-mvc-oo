@@ -8,7 +8,6 @@ require 'model/Periode.php';
 require 'model/PeriodeManager.php';
 require 'model/LivreManager.php';
 
-$livre =new Livre
 $menu = new PeriodeManager(DB_SELECT, DB_USER, DB_PWD, true);
 $bonjour = new UserManagerClass(DB_SELECT, DB_USER, DB_PWD, true);
 $salut = $bonjour->recupUser();
